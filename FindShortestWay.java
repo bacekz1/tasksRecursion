@@ -28,6 +28,12 @@ public class FindShortestWay {
         int steps = 0;
 
         System.out.println(findShorestWay(parking, row, col, steps));
+        for (int i = 0; i < parking.length; i++) {
+            for (int j = 0; j < parking[i].length; j++) {
+                System.out.print(parking[i][j]);
+            }
+            System.out.println();
+        }
     }
 
     static int findShorestWay(char[][] parking, int row, int col, int steps) {
@@ -47,10 +53,10 @@ public class FindShortestWay {
         parking[row][col] = '*';
         steps++;
         int result = Integer.MAX_VALUE;
-        int down = findShorestWay(parking, row + 1, col, steps);
+        int up = findShorestWay(parking, row + 1, col, steps);
         int right = findShorestWay(parking, row, col + 1, steps);
         int left = findShorestWay(parking, row, col - 1, steps);
-        int up = findShorestWay(parking, row - 1, col, steps);
+        int down = findShorestWay(parking, row - 1, col, steps);
         if (down > 0 && down < result) {
             result = down;
         }
@@ -63,12 +69,8 @@ public class FindShortestWay {
         if (right > 0 && right < result) {
             result = right;
         }
-        System.out.println(down + " down");
-        System.out.println(up + " up");
-        System.out.println(left + " left");
-        System.out.println(right + " right");
+
         return result;
 
     }
-
 }
