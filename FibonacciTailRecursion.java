@@ -5,8 +5,7 @@ public class FibonacciTailRecursion {
 //        System.out.println(fibbo(80));
         System.out.println(fibbo(15));
     }
-
-
+    
     static long fibbo(int a) {
 //        if (a == 0 || a == 1) {
 //            return a;
@@ -15,17 +14,14 @@ public class FibonacciTailRecursion {
         return tailRecursion(a, 0, 1);
     }
 
-
     static long tailRecursion(int a, long b, long c) {
 
         if (a == 0){
             return b;
         }
-
         if (a == 1){
             return c;
         }
-
         return tailRecursion(a -1, c, c+b);
     }
 }
