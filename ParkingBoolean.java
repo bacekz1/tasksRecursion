@@ -54,11 +54,10 @@ public class ParkingBoolean {
         }
         System.out.println("------------------------------------");
 
-        return findFreePlace(parking, row + 1, col) ||
+     return   findFreePlace(parking, row + 1, col) ||
                 findFreePlace(parking, row, col + 1) ||
                 findFreePlace(parking, row, col - 1) ||
                 findFreePlace(parking, row - 1, col);
-
     }
 
 }

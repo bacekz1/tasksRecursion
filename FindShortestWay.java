@@ -53,7 +53,7 @@ public class FindShortestWay {
         parking[row][col] = '*';
         steps++;
         int result = Integer.MAX_VALUE;
-        int up = findShorestWay(parking, row + 1, col, steps);
+        int up = findShorestWay(parking, row - 1, col, steps);
         int right = findShorestWay(parking, row, col + 1, steps);
         int left = findShorestWay(parking, row, col - 1, steps);
         int down = findShorestWay(parking, row - 1, col, steps);
